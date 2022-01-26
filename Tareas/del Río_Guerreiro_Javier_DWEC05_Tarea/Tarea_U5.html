@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tarea unidad 5</title>
+    <script type="text/javascript" src="Tarea_U5.js"></script>
+    <style type="text/css">
+        label {
+            width: 150px;
+            margin-bottom: 5px;
+            float: left;
+        }
+        
+        input,
+        select {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        
+        fieldset {
+            background: #66CCCC;
+            width: 400px;
+            border: thick solid #306;
+        }
+        
+        legend {
+            border-top-width: medium;
+            border-right-width: medium;
+            border-bottom-width: medium;
+            border-left-width: medium;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            background-color: #FFF;
+            padding: 1%;
+        }
+        
+        #mensajes {
+            float: left;
+            background: #33FF33;
+            width: 325px;
+        }
+        
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+        }
+        
+        #intentos {
+            float: left;
+            background: #CCFF33;
+            width: 325px;
+        }
+        
+        .error {
+            border: solid 2px #FF0000;
+        }
+        
+        #nombre-error,
+        #apellido-error,
+        #edad-error,
+        #dni-error,
+        #email-error,
+        #ciudad-error,
+        #fecha-error,
+        #tlf-error,
+        #hora-error {
+            color: red;
+            font-weight: 700;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend><b>TAREA UNIDAD 5</b></legend>
+        <form name="formulario" id="formulario" method="get">
+
+            <label for="nombre"><b>Nombre:</b></label>
+            <input type="text" name="nombre" id="nombre" onblur="ponerEnMayusculas('nombre')" onchange="validarInput('nombre', 'nombre-error')" />
+            <div id="nombre-error"></div>
+
+            <label for="apellidos"><b>Apellidos:</b></label>
+            <input type="text" name="apellidos" id="apellidos" onblur="ponerEnMayusculas('apellidos')" onchange="validarInput('apellidos', 'apellido-error')" />
+            <div id="apellido-error"></div>
+
+            <label for="edad"><b>Edad:</b></label>
+            <input name="edad" type="text" id="edad" maxlength="3" onchange="validarInput('edad', 'edad-error')" />
+            <div id="edad-error"></div>
+
+            <label for="nif"><b>NIF:</b></label>
+            <input name="dni" type="text" id="dni" onchange="validarInput('dni', 'dni-error')" />
+            <div id="dni-error"></div>
+
+            <label for="email"><b>E-mail:</b></label>
+            <input name="email" type="text" id="email" onchange="validarInput('email', 'email-error')" />
+            <div id="email-error"></div>
+
+
+            <label for="provincia"><b>Provincia:</b></label>
+            <select name="provincia" id="provincia" onchange="validarInput('provincia', 'ciudad-error')">
+                    <option value="0" selected="selected"><b>Seleccione Provincia</b></option>
+                    <option value="C"><b>A Coruña</b></option>
+                    <option value="LU"><b>Lugo</b></option>
+                    <option value="OU"><b>Ourense</b></option>
+                    <option value="OU"><b>Pontevedra</b></option>
+                </select>
+            <div id="town-error"></div>
+
+            <label for="fecha"><b>Fecha Nacimiento:</b></label>
+            <input name="fecha" type="text" id="fecha" onchange="validarInput('fecha', 'fecha-error')" />
+            <div id="fecha-error"></div>
+
+            <label for="telefono"><b>Teléfono:</b></label>
+            <input name="telefono" type="text" id="telefono" maxlength="9" onchange="validarInput('tlf', 'tlf-error')" />
+            <div id="tlf-error"></div>
+
+            <label for="hora"><b>Hora de visita:</b></label>
+            <input name="hora" type="text" id="hora" onchange="validarInput('hora', 'hora-error')" />
+            <div id="hora-error"></div>
+
+            <input type="reset" name="limpiar" id="button" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+        <div id="errores"></div>
+        <div id="intentos"></div>
+    </fieldset>
+</body>
+
+</html>

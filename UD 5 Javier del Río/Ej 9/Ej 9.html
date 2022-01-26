@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EJERCICIO 9</title>
+    <script type="text/javascript" src="Ej 9.js"></script>
+    <style type="text/css">
+        label {
+            width: 150px;
+            margin-bottom: 5px;
+            margin-top: 10%;
+        }
+        
+        input,
+        select {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        
+        fieldset {
+            background: whitesmoke;
+            width: 350px;
+            border: solid 5px grey;
+            border-radius: 15px;
+            margin-left: 35%;
+            height: 400px;
+            margin-top: 10px;
+        }
+        
+        #mensajes {
+            float: left;
+            background: #33FF33;
+            width: 325px;
+        }
+        
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+        }
+        
+        #intentos {
+            float: left;
+            background: #CCFF33;
+            width: 325px;
+        }
+        
+        .error {
+            border: solid 2px #FF0000;
+        }
+        
+        input {
+            width: 350px;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        
+        #logo {
+            margin-left: 39%;
+            width: 300px;
+            height: 200px;
+        }
+        
+        a {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <a id=logo><img src="https://gocdkeys.com/images/stores/amazon-es-112.png" alt="logo amazon"></a>
+    <fieldset>
+        <a><b>Crear Cuenta</b></a>
+        <form name="formulario" id="formulario" method="get">
+
+            <label for="nombre"><b>Nombre:</b></label><br>
+            <input type="text" name="nombre" id="nombre">
+
+            <br>
+
+            <label for="email-tlf"><b>Número de móvil o dirección de correo electrónico:</b></label><br>
+            <input name="email-tlf" type="text" id="email-tlf" />
+
+            <br>
+
+            <label for="contraseña"><b>Contraseña:</b></label><br>
+            <input name="contraseña" type="contraseña" id="contraseña" />
+
+            <br>
+
+            <label for="confirmar-contraseña"><b>Confirma tu contraseña:</b></label><br>
+            <input name="confirmar-contraseña" type="contraseña" id="confirmar-contraseña" />
+
+            <br>
+
+            <input type="submit" name="submit-button" id="submit-button" value="Continuar" />
+
+        </form>
+    </fieldset>
+</body>
+
+</html>

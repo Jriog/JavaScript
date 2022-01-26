@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EJ 1_U3</title>
+    <script src="Ej1_U3.js"></script>
+    <style>
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+        
+        input,
+        label {
+            margin: .4rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Días restantes</h1>
+    <script>
+        calculodias();
+    </script>
+    <form onsubmit="calculodias()">
+        <label for="start">Dime la fecha de fin:</label>
+        <input id="day" type="text"> Dime el día</input>
+        </br>
+        <input id="month" type="text"> Dime el mes</input>
+        </br>
+        <input id="year" type="text"> Dime el año</input>
+        </br>
+        <input type="submit" value="Calcular" />
+    </form>
+</body>
+
+</html>

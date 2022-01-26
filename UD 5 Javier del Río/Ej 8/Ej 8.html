@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EJERCICIO 8</title>
+    <script type="text/javascript" src="Ej 8.js"></script>
+    <style type="text/css">
+        p {
+            font-size: large;
+            background-color: yellow;
+        }
+        
+        label {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        
+        input,
+        select {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        
+        fieldset {
+            background: #66CCCC;
+            width: 500px;
+            border: 5px solid black;
+        }
+        
+        #mensajes {
+            float: left;
+            background: #33FF33;
+            width: 325px;
+        }
+        
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+        }
+        
+        #intentos {
+            float: left;
+            background: #CCFF33;
+            width: 325px;
+        }
+        
+        .error {
+            border: solid 2px #FF0000;
+        }
+        
+        #P1-false,
+        #P2-false,
+        #P3-false,
+        #P4-false,
+        #P5-false,
+        #P6-false,
+        #P7-false,
+        #P8-false,
+        #P9-false,
+        #P10-false {
+            color: red;
+            font-weight: 700;
+            font-size: large;
+        }
+        
+        #P1-true,
+        #P2-true,
+        #P3-true,
+        #P4-true,
+        #P5-true,
+        #P6-true,
+        #P7-true,
+        #P8-true,
+        #P9-true,
+        #P10-true {
+            color: greenyellow;
+            font-weight: 700;
+            font-size: large;
+        }
+        
+        .paragraph-red {
+            color: red;
+        }
+        
+        a {
+            background-color: #FF0000;
+            color: greenyellow;
+            width: 100px;
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <a>EJERCICIO 8</a>
+        <form name="formulario" id="formulario" method="get">
+
+            <p id="P1-title">1+2?<span id="P1-false"></span><span id="P1-true"></span></p>
+            <label for="P1-answer1">3:</label>
+            <input type="radio" id="P1-answer1" name="P1" value="true">
+            <label for="P1-answer2">2:</label>
+            <input type="radio" id="P1-answer2" name="P1" value="false">
+            <br>
+
+            <p id="P2-title">2+2?<span id="P2-false"></span><span id="P2-true"></span></p>
+            <label for="P2-answer1">5:</label>
+            <input type="radio" id="P2-answer1" name="P2" value="false">
+            <label for="P2-answer2">4:</label>
+            <input type="radio" id="P2-answer2" name="P2" value="true">
+            <br>
+
+            <p id="P3-title">10+35?<span id="P3-false"></span><span id="P3-true"></span></p>
+            <label for="P3-answer1">45:</label>
+            <input type="radio" id="P3-answer1" name="P3" value="true">
+            <label for="P3-answer2">75:</label>
+            <input type="radio" id="P3-answer2" name="P3" value="false">
+            <br>
+
+            <p id="P4-title">100+73?<span id="P4-false"></span><span id="P4-true"></span></p>
+            <label for="P4-answer1">173:</label>
+            <input type="radio" id="P4-answer1" name="P4" value="true">
+            <label for="P4-answer2">2:</label>
+            <input type="radio" id="P4-answer2" name="P4" value="false">
+            <br>
+
+            <p id="P5-title">57+43?<span id="P5-false"></span><span id="P5-true"></span></p>
+            <label for="P5-answer1">123:</label>
+            <input type="radio" id="P5-answer1" name="P5" value="false">
+            <label for="P5-answer2">100:</label>
+            <input type="radio" id="P5-answer2" name="P5" value="true">
+            <br>
+
+            <p id="P6-title">15+15?<span id="P6-false"></span><span id="P6-true"></span></p>
+            <label for="P6-answer1">30:</label>
+            <input type="radio" id="P6-answer1" name="P6" value="true">
+            <label for="P6-answer2">75:</label>
+            <input type="radio" id="P6-answer2" name="P6" value="false">
+            <br>
+
+            <p id="P7-title">150+50?<span id="P7-false"></span><span id="P7-true"></span></p>
+            <label for="P7-answer1">200:</label>
+            <input type="radio" id="P7-answer1" name="P7" value="true">
+            <label for="P7-answer2">900:</label>
+            <input type="radio" id="P7-answer2" name="P7" value="false">
+            <br>
+
+            <p id="P8-title">1000+2000?<span id="P8-false"></span><span id="P8-true"></span></p>
+            <label for="P8-answer1">4000:</label>
+            <input type="radio" id="P8-answer1" name="P8" value="false">
+            <label for="P8-answer2">3000:</label>
+            <input type="radio" id="P8-answer2" name="P8" value="true">
+            <br>
+
+            <p id="P9-title">23+3?<span id="P9-false"></span><span id="P9-true"></span></p>
+            <label for="P9-answer1">26:</label>
+            <input type="radio" id="P9-answer1" name="P9" value="true">
+            <label for="P9-answer2">75:</label>
+            <input type="radio" id="P9-answer2" name="P9" value="false">
+            <br>
+
+            <p id="P10-title">16+94?<span id="P10-false"></span><span id="P10-true"></span></p>
+            <label for="P10-answer1">110:</label>
+            <input type="radio" id="P10-answer1" name="P10" value="true">
+            <label for="P10-answer2">100:</label>
+            <input type="radio" id="P10-answer2" name="P10" value="false">
+            <br>
+
+            <input type="reset" name="limpiar" id="button" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+        <ol></ol>
+    </fieldset>
+</body>
+
+</html>

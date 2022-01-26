@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EJERCICIO 7</title>
+    <script type="text/javascript" src="Ej 7.js"></script>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        
+        input,
+        select {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        
+        fieldset {
+            background: #ccb466;
+            width: 250px;
+            border: 5px solid black;
+            border-radius: 15px;
+            margin-left: 35%;
+            margin-top: 10%;
+        }
+        
+        #mensajes {
+            float: left;
+            background: #33FF33;
+            width: 325px;
+        }
+        
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+        }
+        
+        #intentos {
+            float: left;
+            background: #CCFF33;
+            width: 325px;
+        }
+        
+        .error {
+            border: solid 2px #FF0000;
+        }
+        
+        #empleo-error,
+        #direccion-error,
+        #peso-error,
+        #fecha-error,
+        #time-error {
+            color: red;
+            font-weight: 700;
+            font-size: large;
+        }
+        
+        p {
+            background-color: #FF0000;
+            color: rgb(0, 4, 255);
+            width: 100px;
+            padding-left: 3%;
+            border-radius: 15px;
+            border: solid 3px transparent;
+        }
+        
+        input {
+            float: right;
+            margin-right: 1%;
+            margin-bottom: 5%;
+        }
+        
+        label {
+            width: 150px;
+            float: left;
+            margin: 2%;
+            margin-bottom: 5%;
+        }
+        
+        #button {
+            float: left;
+            margin-left: 3%;
+        }
+        
+        #enviar {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <p>EJERCICIO 7</p>
+        <form name="formulario" id="formulario" method="get">
+
+            <label>Fecha:       </label>
+            <input name="fecha" type="text" id="date" onchange="validarInput('fecha', 'fecha-error')" />
+            <div id="fecha-error"></div>
+
+            <label>Empleo:</label>
+            <input type="text" name="empleo" id="empleo" onchange="validarInput('empleo', 'empleo-error')" />
+            <div id="empleo-error"></div>
+
+            <label>Direcciones:</label>
+            <input type="text" name="direccion" id="direccion" onchange="validarInput('direccion', 'direccion-error')" />
+            <div id="direccion-error"></div>
+
+            <label>Peso:</label>
+            <input name="peso" type="text" id="peso" onchange="validarInput('peso', 'peso-error')" />
+            <div id="peso-error"></div>
+
+            <label>Nº de cuenta:</label>
+            <input name="Ncuenta" type="text" id="Ncuenta" onchange="validarInput('Ncuenta', 'Ncuenta')" />
+            <div id="Ncuenta-error"></div>
+
+            <input type="reset" name="limpiar" id="button" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+        <div id="errores"></div>
+        <div id="intentos"></div>
+    </fieldset>
+</body>
+
+</html>

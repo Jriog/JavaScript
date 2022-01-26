@@ -1,0 +1,56 @@
+<!--
+
+Crea una aplicación que te permitirá generar tus propios formularios de manera dinámica. Para ello dibuja una tabla 
+de una sola fila y varias columnas. En cada columna habrá un botón que realice lo siguiente:
+	Crear un input de tipo texto. Le preguntará al usuario mediante un prompt qué nombre (atributo name) tiene el input.
+	Crear un input de tipo password. Le preguntará al usuario mediante un prompt qué nombre (atributo name) tiene el input.
+	Crear un textarea. Le preguntará al usuario el nombre y generará automáticamente un textarea de 40 columnas y 5 filas.
+	Crear un label. Preguntará al usuario a qué input va referido (atributo for).
+	Crear una imagen. Preguntará al usuario qué ruta tiene la imagen (atributo src).
+	Crear un checkbox. Preguntará al usuario el nombre y el valor (atributos name y value).
+	Crear un radio. Preguntará al usuario el nombre y el valor (atributos name y value).
+	Crear un botón (submit). Preguntará al usuario el nombre y el valor (atributos name y value).
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 4</title>
+    <script src="EJ 4.js"></script>
+</head>
+
+<body>
+    <table class="default">
+
+        <tr>
+
+            <td><button onclick="inputText()">Crear un input de tipo Texto</button></td>
+
+            <td><button onclick="inputPassword() ">Crear un input de tipo password</button></td>
+
+            <td><button onclick="textArea() ">Crear un textarea</button></td>
+
+            <td><button onclick="crearlabel() ">Crear un label</button></td>
+
+            <td><button onclick="crearimg() ">Crear una imagen</button></td>
+
+            <td><button onclick="crearcheckbox() ">Crear un checkbox</button></td>
+
+            <td><button onclick="crearradio() ">Crear un radio button</button></td>
+
+            <td><button onclick="crearboton() ">Crear un botón</button></td>
+
+        </tr>
+
+
+    </table>
+
+    <div id="div1"></div>
+
+</body>
+
+</html>

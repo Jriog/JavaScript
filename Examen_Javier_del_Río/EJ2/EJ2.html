@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ_2</title>
+    <script src="Ej2.js"></script>
+    <style>
+        fieldset {
+            float: left;
+            margin-left: 35%;
+            width: auto;
+        }
+        
+        input {
+            float: right;
+        }
+        
+        label {
+            float: left;
+        }
+        
+        #validar {
+            margin-top: 7%;
+        }
+        
+        legend {
+            width: auto;
+        }
+        
+        .mal {
+            border: solid 5px red;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h1><b>Personas</b></h1>
+        </legend>
+        <form onsubmit="añadirPersona()">
+            <label for="">Nombre:</label>
+            <input type="text" id="nombre">
+            <p id="nombremal" style="color: red;"></p>
+            <br>
+            <label for="">Edad:</label>
+            <input type="number" id="edad">
+            <p id="edadmal" style="color: red;"></p><br>
+            <label for="">Correo:</label>
+            <input type="email" id="correo">
+            <p id="emailmal" style="color: red;"></p><br>
+            <input type="submit" id="validar" value="Añadir">
+            <p id="textoañadido1"></p><br>
+            <p id="textoañadido2"></p><br>
+            <p id="textoañadido3"></p><br>
+        </form>
+    </fieldset>
+
+</body>
+
+</html>

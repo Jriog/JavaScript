@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<htm xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>EJERCICIO 10</title>
+        <script type="text/javascript" src="Ej 10.js"></script>
+        <style type="text/css">
+            body {
+                background-color: grey;
+            }
+            
+            input,
+            label,
+            select {
+                width: 170px;
+                margin-bottom: 15px;
+                margin-left: 0%;
+                margin-right: -5%;
+            }
+            
+            fieldset {
+                background: whitesmoke;
+                width: 350px;
+                height: 300px;
+                border: solid 5px black;
+                border-radius: 15px;
+                margin-left: 35%;
+                margin-top: 10%;
+            }
+            
+            legend {
+                border: solid 2px black;
+                background-color: #FFF;
+            }
+        </style>
+    </head>
+
+    <body>
+        <fieldset>
+            <legend><b>ACCEDE A TU ÁREA DE CLIENTE</b></legend>
+            <form name="formulario" id="formulario" method="get">
+
+                <p id="documento-p"><b>Elige tu documento:</b></p>
+                <input type="radio" id="dni" name="document" value="dni">
+                <label for="dni"><b>DNI o Tarjeta de residencia</b></label>
+                <input type="radio" id="passport" name="document" value="passport">
+                <label for="pasaporte"><b>Pasaporte</b></label>
+                <br>
+
+                <label for="dni-input"><b>Número de documento:</b></label><br>
+                <input name="dni-input" type="text" id="dni-input" placeholder="DNI o Tarjeta de residencia" maxlength="10" />
+                <br>
+
+                <label for="fecha-input"><b>Fecha de Nacimiento:</b></label><br>
+                <input name="fecha-input" type="text" id="fecha-input" />
+                <br>
+
+                <input type="checkbox" id="recordar" name="recordar" value="recordar">
+                <label for="recordar"><b>Recordar</b></label><br>
+
+                <input type="submit" name="enviar" id="enviar" value="Entrar" />
+            </form>
+
+        </fieldset>
+    </body>
+
+    </html>

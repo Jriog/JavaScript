@@ -24,17 +24,20 @@ $(document).ready(inicio);
 function creartabla() {
 
 	let id = 1;
-	document.write("<table>");
+	var htmlTabla = "<table>";
+
 	for (let i = 0; i < 3; i++) {
-		document.write("<tr>");
+		htmlTabla+="<tr>";
 		for (let j = 0; j < 4; j++) {
-			document.write('<td><img src="https://i.pinimg.com/236x/f1/3f/b3/f13fb34cc03956b16ad356f8122b9621.jpg" id="img' + id + '" alt="img' + id + '" width="150px" height="150px"></td>');
+			htmlTabla+=`<td><img src="https://i.pinimg.com/236x/f1/3f/b3/f13fb34cc03956b16ad356f8122b9621.jpg" id="img${id}" alt="img${id}" width="150px" height="150px"></td>`;
 			id++;
 		}
-		document.write("</tr>");
+		htmlTabla+="</tr>";
 	}
-	document.write("<tr><th>Has acertado:</th><th id=aciertos>" + aciertos + "</th><th>veces, pero llevas: </th><th id=intentos>" + intentos + "</th><th>intentos</th></tr>");
-	document.write("</table>");
+	htmlTabla+=`<tr><th>Has acertado:</th><th id=aciertos>${aciertos}</th><th>veces, pero llevas: </th><th id=intentos>${intentos}</th><th>intentos</th></tr>`;
+	htmlTabla+="</table>";
+
+	document.write(htmlTabla);
 }
 
 function inicio() {
@@ -56,16 +59,14 @@ function inicio() {
 
 	$("img").click(cambiarimagen)
 
-
 }
-
 
 function cambiarimagen(e) {
 	contador++;
 	let id = e.target.id;
 	idsdescubiertos[contador - 1] = id;
-	let nid = id.substring(3);
-	this.src = arraydeimagenes[nid - 1]
+	let N_id = id.substring(3);
+	this.src = arraydeimagenes[N_id - 1]
 	imagenesdescubiertas[contador - 1] = this.src;
 	if (contador % 2 == 0) {
 		setTimeout("compararimagenes();", 2000);

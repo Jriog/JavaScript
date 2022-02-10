@@ -100,8 +100,7 @@ function leeriframe() {
         let enlacesparrafo1 = 0;
         for (let index = 0; index < totaltagsa; index++) {
             if (
-                web.getElementsByTagName("a")[index].parentElement ===
-                web.getElementsByTagName("p")[0]
+                web.getElementsByTagName("a")[index].parentElement === web.getElementsByTagName("p")[0]
             ) {
                 enlacesparrafo1++;
             }

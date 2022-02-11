@@ -1,5 +1,9 @@
 
-UD 7 Javier del Río/.gitattributes
-UD 7 Javier del Río/Syncfolders_Database_db
-UD 7 Javier del Río/Syncfolders_Database_db
-UD 7 Javier del Río/Syncfolders_Database_db
+*/.gitattributes
+*/Syncfolders_Database_db
+*.7z
+*.zip
+*.md
+*.gitattributes
+*.rar
+*.pdf

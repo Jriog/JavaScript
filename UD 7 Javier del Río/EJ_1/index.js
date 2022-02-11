@@ -18,7 +18,6 @@ let arraydeimagenes = ["https://empresas.blogthinkbig.com/wp-content/uploads/201
 let imagenesdescubiertas = [];
 let imagenesBool = [false, false, false, false, false, false, false, false, false, false, false, false];
 idsdescubiertos = [];
-creartabla();
 $(document).ready(inicio);
 
 function creartabla() {
@@ -27,17 +26,17 @@ function creartabla() {
 	var htmlTabla = "<table>";
 
 	for (let i = 0; i < 3; i++) {
-		htmlTabla+="<tr>";
+		htmlTabla += "<tr>";
 		for (let j = 0; j < 4; j++) {
-			htmlTabla+=`<td><img src="https://i.pinimg.com/236x/f1/3f/b3/f13fb34cc03956b16ad356f8122b9621.jpg" id="img${id}" alt="img${id}" width="150px" height="150px"></td>`;
+			htmlTabla += `<td><img src="https://i.pinimg.com/236x/f1/3f/b3/f13fb34cc03956b16ad356f8122b9621.jpg" id="img${id}" alt="img${id}" width="150px" height="150px"></td>`;
 			id++;
 		}
-		htmlTabla+="</tr>";
+		htmlTabla += "</tr>";
 	}
-	htmlTabla+=`<tr><th>Has acertado:</th><th id=aciertos>${aciertos}</th><th>veces, pero llevas: </th><th id=intentos>${intentos}</th><th>intentos</th></tr>`;
-	htmlTabla+="</table>";
+	htmlTabla += `<tr><th>Has acertado:</th><th id=aciertos>${aciertos}</th><th>veces, pero llevas: </th><th id=intentos>${intentos}</th><th>intentos</th></tr>`;
+	htmlTabla += "</table>";
 
-	document.write(htmlTabla);
+	$("body").html(htmlTabla);
 }
 
 function inicio() {
@@ -58,7 +57,7 @@ function inicio() {
 	/*V3*/
 
 	$("img").click(cambiarimagen)
-
+	creartabla();
 }
 
 function cambiarimagen(e) {

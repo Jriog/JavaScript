@@ -7,3 +7,4 @@
 *.gitattributes
 *.rar
 *.pdf
+.vscode/settings.json

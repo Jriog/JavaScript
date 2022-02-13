@@ -1,81 +1,65 @@
 $(document).ready(inicio);
 let colorSelected;
-let arrayclassnames = ["color1", "color2", "color4", "color3", "color5", "color6"]
-let Ncolor = 0;
-let pincelactivado = false;
-let elementselected = "";
+let estadopincel = false;
 
 function inicio() {
-
 	genera_tabla();
-	$("body").click( function (event) {
-		var clasename = event.target.className;
-		console.log("🚀 ~ file: main.js ~ line 12 ~ $ ~ clasename", clasename)
-		Ncolor = clasename.substr(5, 6);
-		console.log("🚀 ~ file: main.js ~ line 13 ~ $ ~ Ncolor", Ncolor)
-
-		elementselected = `.${clasename}:eq(0)`;
-        	
-		$(elementselected).click(colorize)
-	});
-
-	$(".tablerodibujo tr td").mouseover(pintar)
+	seleccionarColor()
+	A_D_Pincel();
+	pintar()
 }
 
 function pintar() {
 
-	$(this).css('background-color', colorSelected);
+	$("table#tablero_dibujo td").mouseover(function () {
+		if (!estadopincel) {
+		  return;
+		}
+		$(this).removeClass($(this).attr("class"));
+		$(this).addClass(colorSelected);
+	  });
 
 }
 
-function colorize() {
-	$(elementselected).addClass("seleccionado");
-	for (var i = 0; i < arrayclassnames.length; i++) {
-		if (i !== Ncolor) {
-			$(`td:eq(${i})`).removeClass("seleccionado");
+function seleccionarColor() {
+	$("table:first td").click(function () {
+		if ($(this).attr("id") === "pincel") {
+		  return;
 		}
-	}
-	colorSelected = $(elementselected).css("background-color");
+		$("table:first td").removeClass("seleccionado");
+		colorSelected = $(this).attr("class");
+		$(this).addClass("seleccionado");
+	  });
+}
 
-	if (!pincelactivado) {
-		pincelactivado = true;
-		$("#pincel").html = "<b>Pincel activado</b>";
-	} else {
-		pincelactivado = false;
-		$("#pincel").html = "<b>Pincel desactivado</b>";
-	}
+
+function A_D_Pincel() {
+	$("table#tablero_dibujo").click(function () {
+		if (!estadopincel) {
+			estadopincel = true;
+			$("#pincel").html("<b>Pincel Activado</b>");
+		} else {
+			estadopincel = false;
+			$("#pincel").html("<b>Pincel desactivado</b>");
+		}
+	});
 }
 
 function genera_tabla() {
 
-	var tabla = document.createElement("table");
-	var tblBody = document.createElement("tbody");
-	tblBody.setAttribute("class", "tablerodibujo")
-	var totalfilas = 0;
+	let $tabla = $("<table>");
+	$tabla.attr("id", `tablero_dibujo`);
+	$tabla.attr("style", `border: 1px solid black;`);
+	let $tbody = $tabla.append("<tbody />").children("tbody");
 
-	for (var i = 0; i < 30; i++) {
+	for (let h = 1; h <= 30; h++) {
+		let $tr = $tbody.append("<tr />").children("tr:last");
 
-		// Crea las filas de la tabla
-
-		var fila = document.createElement("tr");
-
-		for (var j = 0; j < 30; j++) {
-			if (i > 1) var totalfilas = 30;
-
-			var celda = document.createElement("td");
-			celda.setAttribute("id", totalfilas);
-			fila.appendChild(celda);
-			totalfilas++;
+		for (let w = 1; w <= 30; w++) {
+			let $td = $tr.append("<td/>").children("td");
+			$td.attr("style", `border: 1px solid black; padding: 10px;`);
 		}
-
-		// agrega la fila al final de la tabla (al final del elemento tblbody)
-		tblBody.appendChild(fila);
 	}
-	// posiciona el <tbody> debajo del elemento <table>
-	tabla.appendChild(tblBody);
-	// appends <table> into <body>
-	$("#zonadibujo").append(tabla);
+	$tabla.appendTo("#zonadibujo");
 
-	// modifica el atributo "border" de la tabla y lo fija a "2";
-	tabla.setAttribute("border", "2");
 }

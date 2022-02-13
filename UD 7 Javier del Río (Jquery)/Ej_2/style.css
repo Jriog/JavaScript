@@ -1,12 +1,6 @@
 .tablerodibujo {
-	border-top-width: thin;
-	border-right-width: thin;
-	border-bottom-width: thin;
-	border-left-width: thin;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
+	border-width: thin;
+	border-style: solid;
 	width: auto;
 }
 .tablerodibujo td {
@@ -45,19 +39,4 @@
 
 .seleccionado{
 	border: 5px solid #939;
-}
-.parrafo{
-    position: absolute;
-    top: 0%;
-    left: 35%;
-}
-.tabla{
-    position: absolute;
-    top: 5%;
-    left: 30%;  
-}
-.divdibujo{
-    position: absolute;
-    top: 15%;
-    left: 32%;  
 }

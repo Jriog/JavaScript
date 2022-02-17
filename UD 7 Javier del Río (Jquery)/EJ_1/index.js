@@ -18,6 +18,7 @@ let arraydeimagenes = ["https://empresas.blogthinkbig.com/wp-content/uploads/201
 let imagenesdescubiertas = [];
 let imagenesBool = [false, false, false, false, false, false, false, false, false, false, false, false];
 idsdescubiertos = [];
+
 $(document).ready(inicio);
 
 function creartabla() {
@@ -40,7 +41,7 @@ function creartabla() {
 }
 
 function inicio() {
-
+	
 	/*let imgs = document.getElementsByTagName("img");
 
 	for (let i = 0; i < imgs.length; i++) {
@@ -56,17 +57,20 @@ function inicio() {
 	*/
 	/*V3*/
 
-	$("img").click(cambiarimagen)
 	creartabla();
+	$("img").click(cambiarimagen);
 }
 
 function cambiarimagen(e) {
+
 	contador++;
 	let id = e.target.id;
 	idsdescubiertos[contador - 1] = id;
 	let N_id = id.substring(3);
+	
 	this.src = arraydeimagenes[N_id - 1]
 	imagenesdescubiertas[contador - 1] = this.src;
+	
 	if (contador % 2 == 0) {
 		setTimeout("compararimagenes();", 2000);
 	}

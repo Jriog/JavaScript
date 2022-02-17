@@ -1,33 +1,29 @@
-const API_URL = 'http://jsonplaceholder.typicode.com'
-
-
-
-print()
-
+const API_URL = 'http://jsonplaceholder.typicode.com';
+const Resources = "albums";
+const HTMLResponse = $("#app")
+print();
 
 function print() {
-   const HTMLResponse = $("#app")
-   fetch(`${API_URL}/users`)
-      .then((response) => response.json())
-      .then((users) => {
-         const tpl = users.map(user => `<li> ${user.name} ||${user.email} </li>`)
-         HTMLResponse.html(`<ul>${tpl}</ul>`)
-      })
+
+
+	fetch(`${API_URL}/${Resources}`)
+		.then((response) => response.json())
+		.then((datos) => {
+			const tpl = datos.map(dato => `<p> ${dato.id} - ${dato.title} </p>`)
+			HTMLResponse.html(`${tpl} <br>`)
+		})
 }
 
+$("#id").keyup(function () {
 
-$("#idPerson").keyup(function () {
+	if ($("#id").val() == '') print()
 
-
-   if($("#idPerson").val() == '') print()
-
-   const HTMLResponse = $("#app")
-   var idPerson = $("#idPerson").val()
-   fetch(`${API_URL}/users?id=${idPerson}`)
-      .then((response) => response.json())
-      .then((users) => {
-         const tpl = users.map(user => `<li> ${user.name} ||${user.email} </li>`)
-         HTMLResponse.html(`<ul>${tpl}</ul>`)
-      })
+	var id = $("#id").val()
+	fetch(`${API_URL}/${Resources}?id=${id}`)
+		.then((response) => response.json())
+		.then((datos) => {
+			const tpl = datos.map(dato => `<p>${dato.id} - ${dato.title}</p>`)
+			HTMLResponse.html(`${tpl}`)
+		})
 
 });
